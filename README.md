@@ -9,7 +9,9 @@ Visual cognition
 
 ## CloudSight.sendImage
 Sending an Image.
+
 The focus parameters accept the point, using North-West gravity (0,0 corresponds to the upper-left corner), for which to place a highlight of attention on the image. In the event there are many identifiable objects in the image, this attempts to place importance on the ones closest to the focal point. You may specify a focal point in terms of relative coordinates (0.0 through 1.0) or absolute coordinates (i.e. a 400x400 image would have 0 through 400 for each axis).
+
 Once the image request has been received, a response will be returned containing either a success or error message. If the request is successful, you will receive a url parameter containing a URL to the image as stored on our service, and a token for the image, which you can use to retrieve the resulting annotation data in the `getImageRecognationResult` endpoint.
 
 | Field     | Type       | Description
