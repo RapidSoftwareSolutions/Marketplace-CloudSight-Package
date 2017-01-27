@@ -46,20 +46,22 @@ module.exports = (req, res) => {
 
     for(let p in params) bodyString += `&${p}=${lib.encode(params[p])}`;
 
-    request({
-        method: 'POST',
-        uri: 'http://api.cloudsight.ai/image_requests',
-        headers: {
-            'Authorization': 'CloudSight ' + apiKey
-        },
-        body: bodyString
-    }, (err, response, reslut) => {
-        if(!err && (/20.*/).test(response.statusCode)) {
-            defered.resolve(lib.safeParse(reslut));
-        } else { 
-            defered.reject(lib.safeParse(err || reslut || response.statusCode));
-        }
-    });
+    defered.resolve(lib.safeParse({image}));
+
+    // request({
+    //     method: 'POST',
+    //     uri: 'http://api.cloudsight.ai/image_requests',
+    //     headers: {
+    //         'Authorization': 'CloudSight ' + apiKey
+    //     },
+    //     body: bodyString
+    // }, (err, response, reslut) => {
+    //     if(!err && (/20.*/).test(response.statusCode)) {
+    //         defered.resolve(lib.safeParse(reslut));
+    //     } else { 
+    //         defered.reject(lib.safeParse(err || reslut || response.statusCode));
+    //     }
+    // });
 
     return defered.promise;
 }
