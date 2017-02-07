@@ -1,5 +1,7 @@
+[![](https://scdn.rapidapi.com/RapidAPI_banner.png)](https://rapidapi.com/package/CloudSight/functions?utm_source=RapidAPIGitHub_CloudSightFunctions&utm_medium=button&utm_content=RapidAPI_GitHub)
+
 # CloudSight Package
-Visual cognition
+Visual recognition
 * Credentials: apiKey
 
 ## How to get credentials: 
